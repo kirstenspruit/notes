@@ -162,7 +162,7 @@ ol a,
 blockquote a,
 cite a {
     font-size: inherit;
-    font-family: inherit;
+    font-family: serif;
 }
 
 b,
