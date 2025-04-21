@@ -1,0 +1,7 @@
+---
+title: test
+feed: show
+date: 21-04-2025
+permalink: /test
+format: list
+---
