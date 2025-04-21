@@ -142,7 +142,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 p a,
@@ -162,7 +162,7 @@ ol a,
 blockquote a,
 cite a {
     font-size: inherit;
-    font-family: serif;
+    font-family: 'Arial', sans-serif;
 }
 
 b,
@@ -178,6 +178,8 @@ html {
 
 body {
     counter-reset: sidenote-counter;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.05em;
 }
 
 .section {
@@ -358,7 +360,7 @@ img {
 }
 
 code {
-    font-family: Consolas, 'Courier New', Courier, monospace;
+    font-family: 'Menlo', 'Courier New', Courier, monospace;
     display: inline-block;
     overflow: auto !important;
     word-wrap: break-word !important;
@@ -385,7 +387,7 @@ code {
 
 
 pre code {
-    font-family: Consolas, 'Courier New', Courier, monospace;
+    font-family: 'Menlo', 'Courier New', Courier, monospace;
     display: inline-block;
     overflow: auto !important;
     word-wrap: break-word !important;
