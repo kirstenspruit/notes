@@ -4,5 +4,5 @@
 
 layout: Post
 permalink: /
-title: K’s notes
+title: Home
 ---

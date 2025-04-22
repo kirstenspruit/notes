@@ -1,7 +1,6 @@
 --- 
-layout: Stylesheet 
+layout: Stylesheet
 --- 
-@import "fruity.css";
 
 
 html,
@@ -10,7 +9,7 @@ html[data-theme="light"] {
     --color-bg-sub: #FAFAFC;
     --color-text-main: #282832;
     --color-text-sub: #5D5D67;
-    --color-text-link: #2380ED;
+    --color-text-link: blue;
     --color-border-dark: #363636;
     --color-border: #BABCBD;
     --color-border-light: #E5E5E5;
@@ -142,7 +141,7 @@ h4,
 h5,
 h6 {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', serif;
 }
 
 p a,
@@ -162,7 +161,7 @@ ol a,
 blockquote a,
 cite a {
     font-size: inherit;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', serif;
 }
 
 b,
@@ -178,8 +177,8 @@ html {
 
 body {
     counter-reset: sidenote-counter;
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 0.05em;
+    font-family: 'Times New Roman', serif;
+    /* letter-spacing: 0.05em; */
 }
 
 .section {
