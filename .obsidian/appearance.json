@@ -1,0 +1,10 @@
+{
+  "cssTheme": "Minimal",
+  "accentColor": "#262484",
+  "interfaceFontFamily": "Menlo,Arial",
+  "textFontFamily": "Arial",
+  "enabledCssSnippets": [
+    "snippet"
+  ],
+  "monospaceFontFamily": "Menlo"
+}

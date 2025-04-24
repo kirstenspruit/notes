@@ -1,0 +1,39 @@
+:root {
+    --color__main: var(--color__dark);
+    --color__bg: var(--color__light);
+
+    --color__accent: var(--color__now);
+    --color__dark: #111;
+    --color__light: #fff;
+
+    /* Changing colors */
+    
+    --color__now: #0318d010; /* <-- is changed by script */
+    
+    --color__0000: rgba(255, 0, 0, 0.1);
+    --color__0100: rgba(255, 166, 0, 0.1);
+    --color__0200: rgba(255, 255, 0, 0.1);
+    --color__0300: rgba(0, 128, 0, 0.1);
+    --color__0400: rgba(0, 255, 255, 0.1);
+    --color__0500: rgba(0, 0, 255, 0.1);
+    --color__0600: rgba(128, 0, 128, 0.1);
+    --color__0700: rgba(255, 0, 255, 0.1);
+
+    --color__0800: rgba(255, 0, 0, 0.1);
+    --color__0900: rgba(255, 166, 0, 0.1);
+    --color__1000: rgba(255, 255, 0, 0.1);
+    --color__1100: rgba(0, 128, 0, 0.1);
+    --color__1200: rgba(0, 255, 255, 0.1);
+    --color__1300: rgba(0, 0, 255, 0.1);
+    --color__1400: rgba(128, 0, 128, 0.1);
+    --color__1500: rgba(255, 0, 255, 0.1);
+
+    --color__1600: rgba(255, 0, 0, 0.1);
+    --color__1700: rgba(255, 166, 0, 0.1);
+    --color__1800: rgba(255, 255, 0, 0.1);
+    --color__1900: rgba(0, 128, 0, 0.1);
+    --color__2000: rgba(0, 255, 255, 0.1);
+    --color__2100: rgba(0, 0, 255, 0.1);
+    --color__2200: rgba(128, 0, 128, 0.1);
+    --color__2300: rgba(255, 0, 255, 0.1);
+}

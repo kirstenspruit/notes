@@ -43,21 +43,26 @@
         <script src="{{ site.baseurl }}/assets/js/Search.js"></script>
     {%- endif -%}
     <!-- feed with filter-->
-    <div class="related-wrapper">
-    {% assign note_items = site.notes | sort: "date" | reverse %}
-    {% for note_items in note_items %}
-        {%- if note_items.feed == "show" -%}
-                <div class="notelist-feed">
-                    <a href="{{ site.baseurl }}{{note_items.url}}">
-                        <h6>{{ note_items.title }}</h6>
-                        <p class="excerpt">
-                            {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 200 }}
-                        </p>
-                    </a>
-                </div>
-        {%- endif -%}
-    {%- endfor -%}
-    </div>
+    <section class="related">
+        <h2>Related</h2>
+        <ul class="related__list">
+            {% assign note_items = site.notes | sort: "date" | reverse %}
+            {% for note_items in note_items %}
+                {%- if note_items.feed == "show" -%}
+                        <li class="related__item">
+                            <a href="{{ site.baseurl }}{{note_items.url}}" class="link-wrapper">
+                                <article>
+                                    <h3>{{ note_items.title }}</h3>
+                                    <p class="excerpt">
+                                        {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 200 }}
+                                    </p>
+                                </article>
+                            </a>
+                        </li>
+                {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    </section>
 {%-endif -%}
 
 <!--Dynamic List Feed-->

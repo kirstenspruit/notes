@@ -31,16 +31,7 @@
 
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Hiran Venugopalan" property="og:site_name" />
-    <meta
-        content="Product and Type Designer | UI UX | Design Mentoring"
-        property="og:description">
     <meta content="{{ site.url }}/about/" property="article:author">
-    <meta property="og:image" content="../assets/img/OGImg.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
@@ -51,14 +42,14 @@
     {%- endif -%}
 
     <title>{{page.title}} - {{site.heading}}</title>
-    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/profile.png">
-    <link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png" sizes="16x16" />
     <!-- <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" media="all" class="default" /> -->
     <!-- <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" media="all" class="default" /> -->
     <!-- <link href="{{ site.baseurl }}/assets/css/Util.css" rel="stylesheet" media="all" class="default" /> -->
+    <link href="{{ site.baseurl }}/assets/css/01_normalize.css" rel="stylesheet" media="all" class="default" />
+    <link href="{{ site.baseurl }}/assets/css/02_reset.css" rel="stylesheet" media="all" class="default" />
     <link href="{{ site.baseurl }}/assets/css/kstyle.css" rel="stylesheet" media="all" class="default" />
+    <link href="{{ site.baseurl }}/assets/css/clock.css" rel="stylesheet" media="all" class="default" />
     <!-- <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" /> -->
 
     <!--[if IE]>
@@ -66,119 +57,116 @@
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
-    <main>
+    <main class="main">
     {%- include Nav.html -%}
-    <section class="section">
-        <div class="columns is-centered">
+    <div class="page-wrapper">
 
-            <!-- Homepage Layout-->
+           
             {%- if page.permalink == "/" -%}
-            <div class="column is-8-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                    {%- if site.preferences.homepage.enabled -%}
-                            <!--- Show Homepage -->
-                            {%- include Homepage.html -%}
-                    {%- else -%}
-                            <!--- Show Feed Part -->
-                <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                            <h5 class="meta-title"><a href="/">← Home</a></h5>
-                            <div class="jumbo">{{page.title}}</div>
-                            {%- include Content.html -%}
-                            {%- include Feed.html -%}
-                </div>
-                    {%- endif -%}
-            </div>
-            {%- endif -%}
-
-            <!--- Notes Feed Layout-->
-            {%- if page.feedformat -%}
-            <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                <h5 class="meta-title"><a href="/">← Home</a></h5>
-                    <div class="jumbo">{{page.title}}</div>
+            <div class="layout homepage">
+                {%- if site.preferences.homepage.enabled -%}
+                        <!--- Show Homepage -->
+                        {%- include Homepage.html -%}
+                {%- else -%}
+                        <!--- Show Feed Part -->
+                <div class="feed">
+                    <a href="/">
+                        ← Home
+                    </a>
+                    <h1 class="page-title">{{page.title}}</h1>
                     {%- include Content.html -%}
                     {%- include Feed.html -%}
+                </div>
+                {%- endif -%}
+            </div>
             {%- endif -%}
 
-            <!--- Notes Layout-->
+    
+            {%- if page.feedformat -%}
+            <div class="layout feed">
+                <a href="/">
+                    ← Home
+                </a>
+                <h1 class="page-title">{{page.title}}</h1>
+                {%- include Content.html -%}
+                {%- include Feed.html -%}
+            {%- endif -%}
+
+        
             {%- if page.content-type == "notes" -%}
-            <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
-                    <div class="note-page-section">
-                        <div>
-                            {%- if site.preferences.homepage.enabled -%}
-                            <a onclick="window.history.back();">
-                            {%- else -%}
-                            <a onclick="window.location.assign('/');">
-                            {%- endif -%}
-                                    <h5 class="meta-title">← BACK</h5>
-                            </a>
-                        </div>
-                    <!--- List type Note Layout-->
-                    {%- if page.format == "list" -%}
-                    <style>
-                        li {border-bottom: 1px solid var(--color-border-light); list-style: none; padding: 0.4rem 0 0.4rem 0;}
-                        .content ul { padding-left: 0px;}
-                        h3 {padding-top: 1rem; padding-bottom: 0rem;}
-                    </style>                    
-                    {%- endif -%}
-                    <h1>{{page.title}}</h1>
-                    {%- include Content.html -%}
-                    {%- include Backlinks.html -%}
-                    </div>
+            <div class="layout notes">           
+                {%- if site.preferences.homepage.enabled -%}
+                <a onclick="window.history.back();">
+                {%- else -%}
+                <a onclick="window.location.assign('/');">
+                {%- endif -%}
+                    ← Back
+                </a>
+                <!--- List type Note Layout-->
+                {%- if page.format == "list" -%}
+                <style>
+                    li {border-bottom: 1px solid var(--color-border-light); list-style: none; padding: 0.4rem 0 0.4rem 0;}
+                    .content ul { padding-left: 0px;}
+                    h3 {padding-top: 1rem; padding-bottom: 0rem;}
+                </style>                    
+                {%- endif -%}
+                <h1 class="page-title">{{page.title}}</h1>
+                {%- include Content.html -%}
+                {%- include Backlinks.html -%}
             </div>
             {%- endif -%}
 
 
-            <!--- Post Feed Layout-->
             {%- if page.permalink == "/posts" -%}
-            <div class="column is-6-widescreen  is-8-desktop is-8-tablet is-12-mobile">
-                <h5 class="meta-title"><a href="/">← Home</a></h5>
-                <div class="jumbo">{{page.title}}</div>
-                    {%- include Content.html -%}
-                    {% for post in site.posts %}
-                        <div class="list-feed"> 
-                        <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
-                            <div class="writinglist-title">{{post.title }}</div>
-                        </a>
-                        </div>
-                    {%- endfor -%}
+            <div class="layout posts">
+                <a href="/">← Home</a>
+                <h1 class="page-title">{{page.title}}</h1>
+                {%- include Content.html -%}
+                {% for post in site.posts %}
+                <div class="list-feed"> 
+                    <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
+                        <div class="writinglist-title">{{post.title }}</div>
+                    </a>
+                </div>
+                {%- endfor -%}
             </div> 
 
-            <ul>
+            <!-- <ul> why is this here??? -->
                 
             {%- endif -%}
 
-             <!--- Post Layout-->
+
              {%- if page.content-type == "post"  -%}
-             <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
-                     <div class="note-page-section">
-                         <div>
-                             {%- if site.preferences.homepage.enabled -%}
-                             <a onclick="window.history.back();">
-                             {%- else -%}
-                             <a onclick="window.location.assign('/');">
-                             {%- endif -%}
-                                     <h5 class="meta-title">← BACK</h5>
-                             </a>
-                         </div>
-                     <h1>{{page.title}}</h1>
-                     {%- include Content.html -%}
-                     {%- include Backlinks.html -%}
-                     </div>
+             <div class="layout post">
+                {%- if site.preferences.homepage.enabled -%}
+                <a onclick="window.history.back();">
+                {%- else -%}
+                <a onclick="window.location.assign('/');">
+                {%- endif -%}
+                    ← Back
+                </a>
+                <h1 class="page-title">{{page.title}}</h1>
+                    {%- include Content.html -%}
+                    {%- include Backlinks.html -%}
              </div>
              {%- endif -%}
 
-            <!--- Static Page Layout-->
             {%- if page.content-type == "static" -%}
-            <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
-                        <div class="jumbo">{{page.title}}</div>                        
-                        {%- include Content.html -%}
-                </div>
+            <div class="layout page">
+                <h1 class="page-title">{{page.title}}</h1>                        
+                {%- include Content.html -%}
+            </div>
             {%- endif -%}
-        </div>
-    </section>   
+        </div>   
     {%- include Footer.html -%}             
 </main>
 </body>
+<script src="{{ site.baseurl }}/assets/js/clock.js"></script>
 </html>
