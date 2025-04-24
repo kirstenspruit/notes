@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_drafts/2025-04-24-beginnings.md",
+                "file": "pages/notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-04-24-beginnings"
+              "title": "notes"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_drafts/2025-04-24-beginnings.md",
+                "file": "pages/notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025-04-24-beginnings"
+              "title": "Backlinks for notes"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_drafts/2025-04-24-beginnings.md",
+                "file": "pages/notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2025-04-24-beginnings"
+              "title": "Outgoing links from notes"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_drafts/2025-04-24-beginnings.md",
+                "file": "pages/notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-04-24-beginnings"
+              "title": "Outline of notes"
             }
           },
           {
@@ -179,20 +179,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2d5ee2838eeff45b",
+  "active": "0544f7d656e270f7",
   "lastOpenFiles": [
+    "_site/archive.html",
+    "pages/about.md",
+    "pages/lists.md",
+    "pages/index.md",
+    "pages/404.md",
+    "_drafts/2025-04-24-beginnings.md",
+    "_site/about.html",
     "_drafts",
     "README.md",
-    "_drafts/2025-04-24-beginnings.md",
     "_posts/2020-03-01-features.md",
     "_posts/2020-03-01-how-to.md",
-    "pages/about.md",
     "_posts/2025-04-22-about.md",
     "pages/posts.md",
     "pages/notes.md",
-    "pages/lists.md",
-    "pages/404.md",
-    "pages/index.md",
     "_templates/page template.md",
     "_templates"
   ]

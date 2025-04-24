@@ -79,11 +79,11 @@ function clock() {
   }
 
   // Light/darkmode
-    if (t < "09:00:00") {
+    if (t < "07:00:00") {
       document.documentElement.style.setProperty('--color__main', 'var(--color__light)');
       document.documentElement.style.setProperty('--color__bg', 'var(--color__dark)');
       }
-    else if (t < "18:00:00") {
+    else if (t < "20:00:00") {
       document.documentElement.style.setProperty('--color__main', 'var(--color__dark)');
       document.documentElement.style.setProperty('--color__bg', 'var(--color__light)');
     }
