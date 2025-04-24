@@ -97,11 +97,12 @@
                 <h1 class="page-title">{{page.title}}</h1>
                 {%- include Content.html -%}
                 {%- include Feed.html -%}
+            </div>
             {%- endif -%}
 
         
-            {%- if page.content-type == "archive" -%}
-            <div class="layout archive">           
+            {%- if page.content-type == "notes" -%}
+            <div class="layout notes">           
                 {%- if site.preferences.homepage.enabled -%}
                 <a onclick="window.history.back();">
                 {%- else -%}

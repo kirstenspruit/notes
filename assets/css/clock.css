@@ -3,7 +3,7 @@
     --color__bg: var(--color__light);
 
     --color__accent: var(--color__now);
-    --color__dark: #111;
+    --color__dark: #000;
     --color__light: #fff;
 
     /* Changing colors */

@@ -63,6 +63,7 @@ hr {
 .main {
     padding: 0 var(--x);
     min-height: 100vh;
+    
 }
 .header {
     padding: var(--x) 0 ;
@@ -137,7 +138,7 @@ hr {
 }
 
 .footer {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     display: flex;
     flex-direction: row;
