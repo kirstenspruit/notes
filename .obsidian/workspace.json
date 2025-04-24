@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages/notes.md",
+                "file": "pages/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "notes"
+              "title": "about"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pages/notes.md",
+                "file": "pages/about.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for notes"
+              "title": "Backlinks for about"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pages/notes.md",
+                "file": "pages/about.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from notes"
+              "title": "Outgoing links from about"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pages/notes.md",
+                "file": "pages/about.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of notes"
+              "title": "Outline of about"
             }
           },
           {
@@ -181,6 +181,8 @@
   },
   "active": "0544f7d656e270f7",
   "lastOpenFiles": [
+    "pages/notes.md",
+    "pages/archive.md",
     "_site/archive.html",
     "pages/about.md",
     "pages/lists.md",
@@ -194,7 +196,6 @@
     "_posts/2020-03-01-how-to.md",
     "_posts/2025-04-22-about.md",
     "pages/posts.md",
-    "pages/notes.md",
     "_templates/page template.md",
     "_templates"
   ]
