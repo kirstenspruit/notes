@@ -11,14 +11,10 @@
             "id": "0544f7d656e270f7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_notes/Public/Test.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Test"
+              "title": "New tab"
             }
           }
         ]
@@ -181,6 +177,7 @@
   },
   "active": "0544f7d656e270f7",
   "lastOpenFiles": [
+    "_notes/Public/Test.md",
     "pages/notes.md",
     "pages/about.md",
     "pages/archive.md",

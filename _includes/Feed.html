@@ -43,19 +43,21 @@
         <script src="{{ site.baseurl }}/assets/js/Search.js"></script>
     {%- endif -%}
     <!-- feed with filter-->
-    <section class="related">
-        <h2>Related</h2>
-        <ul class="related__list">
+    <section class="feed">
+        <!-- <h2 class="section-title">Notes</h2> -->
+        <ul class="feed__list">
             {% assign note_items = site.notes | sort: "date" | reverse %}
             {% for note_items in note_items %}
                 {%- if note_items.feed == "show" -%}
-                        <li class="related__item">
+                        <li class="feed__item">
                             <a href="{{ site.baseurl }}{{note_items.url}}" class="link-wrapper">
-                                <article>
-                                    <h3>{{ note_items.title }}</h3>
-                                    <p class="excerpt">
+                                <article class="note">
+                                    
+                                    <p class="note__date">{{ note_items.date | date: "%Y-%m-%d" }}</p>
+                                    <h3 class="note__title">{{ note_items.title }}</h3>
+                                    <!-- <p class="excerpt">
                                         {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 200 }}
-                                    </p>
+                                    </p> -->
                                 </article>
                             </a>
                         </li>

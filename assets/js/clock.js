@@ -82,14 +82,17 @@ function clock() {
     if (t < "07:00:00") {
       document.documentElement.style.setProperty('--color__main', 'var(--color__light)');
       document.documentElement.style.setProperty('--color__bg', 'var(--color__dark)');
+      document.documentElement.style.setProperty('--color__muted', 'var(--color__muted--dark)');
       }
-    else if (t < "20:00:00") {
+    else if (t < "21:00:00") {
       document.documentElement.style.setProperty('--color__main', 'var(--color__dark)');
       document.documentElement.style.setProperty('--color__bg', 'var(--color__light)');
+      document.documentElement.style.setProperty('--color__muted', 'var(--color__muted--light)');
     }
     else {
       document.documentElement.style.setProperty('--color__main', 'var(--color__light)');
       document.documentElement.style.setProperty('--color__bg', 'var(--color__dark)');
+      document.documentElement.style.setProperty('--color__muted', 'var(--color__muted--dark)');
     }
 
 

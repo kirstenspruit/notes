@@ -66,20 +66,16 @@
 <body>
     <main class="main">
     {%- include Nav.html -%}
-    <div class="page-wrapper">
-
            
             {%- if page.permalink == "/" -%}
-            <div class="layout homepage">
                 {%- if site.preferences.homepage.enabled -%}
+                <div class="layout homepage">
                         <!--- Show Homepage -->
                         {%- include Homepage.html -%}
+                </div>
                 {%- else -%}
                         <!--- Show Feed Part -->
-                <div class="feed">
-                    <a href="/">
-                        ← Home
-                    </a>
+                <div class="layout feed">
                     <h1 class="page-title">{{page.title}}</h1>
                     {%- include Content.html -%}
                     {%- include Feed.html -%}
@@ -90,10 +86,7 @@
 
     
             {%- if page.feedformat -%}
-            <div class="layout feed">
-                <a href="/">
-                    ← Home
-                </a>
+            <div class="layout">
                 <h1 class="page-title">{{page.title}}</h1>
                 {%- include Content.html -%}
                 {%- include Feed.html -%}
@@ -127,16 +120,22 @@
 
             {%- if page.permalink == "/posts" -%}
             <div class="layout posts">
-                <a href="/">← Home</a>
                 <h1 class="page-title">{{page.title}}</h1>
                 {%- include Content.html -%}
-                {% for post in site.posts %}
-                <div class="list-feed"> 
-                    <a href="{{ site.baseurl }}{{post.url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
-                        <div class="writinglist-title">{{post.title }}</div>
-                    </a>
-                </div>
-                {%- endfor -%}
+                <section class="feed">
+                    <!-- <h2 class="section-title">Posts</h2> -->
+                    <ul class="feed__list"> 
+                    {% for post in site.posts %}
+                        <li class="feed__item">
+                            <a href="{{ site.baseurl }}{{post.url}}" class="link-wrapper">
+                                <article class="note">
+                                    <p class="note__date">{{ post.date | date: "%Y-%m-%d" }}</p>
+                                    <div class="note__title">{{post.title }}</div>
+                                </article>
+                            </a>
+                        </li>
+                    {%- endfor -%}
+                    </ul>
             </div> 
 
             <!-- <ul> why is this here??? -->
@@ -165,7 +164,7 @@
                 {%- include Content.html -%}
             </div>
             {%- endif -%}
-        </div>   
+         
         {%- include Footer.html -%}             
     </main>
 </body>

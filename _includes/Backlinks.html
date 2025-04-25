@@ -60,7 +60,7 @@
 {%- assign display_class = 'show' -%}
 {%- endif -%}
 <div class="related {{display_class}}" id="jekyll-seamless-backlinks">
-    <h2>Links to this note</h2>
+    <h2 class="section-title">Links to this note</h2>
     <ul class="related__list">
         {%- for note in site.notes -%}
         {%- if note.url != page.url -%}
