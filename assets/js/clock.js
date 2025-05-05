@@ -1,7 +1,7 @@
 
 function clock() {
   var d = new Date();
-  var t = d.toLocaleTimeString("ro-RO", {timeZone: "Europe/Amsterdam"});
+  var t = d.toLocaleTimeString("nl-NL", {timeZone: "Europe/Amsterdam"});
   document.getElementById("currentTime").innerHTML = t;
 
   // Change color accent based on the time of day
@@ -79,29 +79,26 @@ function clock() {
   }
 
   // Light/darkmode
-    if (t < "07:00:00") {
-      document.documentElement.style.setProperty('--color__main', 'var(--color__light)');
-      document.documentElement.style.setProperty('--color__bg', 'var(--color__dark)');
-      document.documentElement.style.setProperty('--color__muted', 'var(--color__muted--dark)');
-      }
-    else if (t < "21:00:00") {
-      document.documentElement.style.setProperty('--color__main', 'var(--color__dark)');
-      document.documentElement.style.setProperty('--color__bg', 'var(--color__light)');
-      document.documentElement.style.setProperty('--color__muted', 'var(--color__muted--light)');
+  if (t < "07:00:00") {
+    document.body.classList.add("theme-dark");
+    document.body.classList.remove("theme-light");
     }
-    else {
-      document.documentElement.style.setProperty('--color__main', 'var(--color__light)');
-      document.documentElement.style.setProperty('--color__bg', 'var(--color__dark)');
-      document.documentElement.style.setProperty('--color__muted', 'var(--color__muted--dark)');
-    }
+  else if (t < "21:00:00") {
+    document.body.classList.remove("theme-dark");
+    document.body.classList.add("theme-light");
+  }
+  else {
+    document.body.classList.add("theme-dark");
+    document.body.classList.remove("theme-light");
+  }
 
 
   const year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
-  const month = new Intl.DateTimeFormat('en', { month: 'long' }).format(d);
-  const day = new Intl.DateTimeFormat('en', { day: 'numeric' }).format(d);
-  const weekday = new Intl.DateTimeFormat('en', { weekday: 'long' }).format(d);
+  const month = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
+  const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+  const weekday = new Intl.DateTimeFormat('en', { weekday: 'short' }).format(d);
 
-  document.getElementById("currentDate").innerHTML = `${weekday} ${day} ${month} ${year}`;
+  document.getElementById("currentDate").innerHTML = `${year}-${month}-${day} (${weekday})`;
 
 }
 
@@ -113,5 +110,5 @@ document.addEventListener("DOMContentLoaded", () => {
 // Light/darkmode toggle
 function toggleMode() {
     var element = document.body;
-    element.classList.toggle("dark-mode");
+    element.classList.toggle("theme-dark");
  }

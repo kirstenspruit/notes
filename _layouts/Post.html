@@ -47,7 +47,8 @@
     <!-- <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" media="all" class="default" /> -->
     <!-- <link href="{{ site.baseurl }}/assets/css/Util.css" rel="stylesheet" media="all" class="default" /> -->
     <link href="{{ site.baseurl }}/assets/css/01_normalize.css" rel="stylesheet" media="all" class="default" />
-    <link href="{{ site.baseurl }}/assets/css/02_reset.css" rel="stylesheet" media="all" class="default" />
+    <!-- <link href="{{ site.baseurl }}/assets/css/02_reset.css" rel="stylesheet" media="all" class="default" /> -->
+    <!-- <link href="{{ site.baseurl }}/assets/css/flexoki.css" rel="stylesheet" media="all" class="default" /> -->
     <link href="{{ site.baseurl }}/assets/css/kstyle.css" rel="stylesheet" media="all" class="default" />
     <link href="{{ site.baseurl }}/assets/css/clock.css" rel="stylesheet" media="all" class="default" />
     <!-- <link href="{{ site.baseurl }}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" /> -->
@@ -65,22 +66,22 @@
 
 <body>
     <main class="main">
-    {%- include Nav.html -%}
+        <header class="header">
+            {%- include Nav.html -%}
+        </header>
            
             {%- if page.permalink == "/" -%}
-                {%- if site.preferences.homepage.enabled -%}
-                <div class="layout homepage">
-                        <!--- Show Homepage -->
-                        {%- include Homepage.html -%}
-                </div>
-                {%- else -%}
-                        <!--- Show Feed Part -->
-                <div class="layout feed">
-                    <h1 class="page-title">{{page.title}}</h1>
-                    {%- include Content.html -%}
-                    {%- include Feed.html -%}
-                </div>
-                {%- endif -%}
+            {%- if site.preferences.homepage.enabled -%}
+            <div class="layout homepage">
+                    {%- include Homepage.html -%}
+            </div>
+            {%- else -%}
+            <div class="layout feed">
+                <h1 class="page-title">{{page.title}}</h1>
+                {%- include Content.html -%}
+                {%- include Feed.html -%}
+            </div>
+            {%- endif -%}
             </div>
             {%- endif -%}
 
@@ -103,42 +104,33 @@
                 {%- endif -%}
                     ← Back
                 </a>
-                <!--- List type Note Layout-->
                 {%- if page.format == "list" -%}
-                <style>
-                    li {border-bottom: 1px solid var(--color-border-light); list-style: none; padding: 0.4rem 0 0.4rem 0;}
-                    .content ul { padding-left: 0px;}
-                    h3 {padding-top: 1rem; padding-bottom: 0rem;}
-                </style>                    
+                
                 {%- endif -%}
-                <h1 class="page-title">{{page.title}}</h1>
+                <div class="page-header">
+                    <h1 class="page-title"> {{page.title}}</h1>
+                </div>
                 {%- include Content.html -%}
                 {%- include Backlinks.html -%}
             </div>
             {%- endif -%}
 
 
-            {%- if page.permalink == "/posts" -%}
+            {%- if page.permalink == "/log" -%}
             <div class="layout posts">
                 <h1 class="page-title">{{page.title}}</h1>
                 {%- include Content.html -%}
-                <section class="feed">
-                    <!-- <h2 class="section-title">Posts</h2> -->
-                    <ul class="feed__list"> 
+                <ul class="feed__list"> 
                     {% for post in site.posts %}
-                        <li class="feed__item">
-                            <a href="{{ site.baseurl }}{{post.url}}" class="link-wrapper">
-                                <article class="note">
-                                    <p class="note__date">{{ post.date | date: "%Y-%m-%d" }}</p>
-                                    <div class="note__title">{{post.title }}</div>
-                                </article>
-                            </a>
-                        </li>
+                    <li class="feed__item">
+                        <article class="note">
+                            <span class="muted tab-nums">{{ post.date | date: "%Y-%m-%d" }}</span>
+                            <a href="{{ site.baseurl }}{{post.url}}" class="note__title">{{post.title }}</a>
+                        </article>
+                    </li>
                     {%- endfor -%}
-                    </ul>
+                </ul>
             </div> 
-
-            <!-- <ul> why is this here??? -->
                 
             {%- endif -%}
 
@@ -152,14 +144,18 @@
                 {%- endif -%}
                     ← Back
                 </a>
-                <h1 class="page-title">{{page.title}}</h1>
-                    {%- include Content.html -%}
-                    {%- include Backlinks.html -%}
+                <div class="page-header">
+                    <h1 class="page-title"> {{page.title}}</h1>
+                    <span class="muted tab-nums">{{ page.date | date: "%Y-%m-%d" }}</span>
+                </div>
+            
+                {%- include Content.html -%}
+                {%- include Backlinks.html -%}
              </div>
              {%- endif -%}
 
             {%- if page.content-type == "static" -%}
-            <div class="layout page">
+            <div class="layout static">
                 <h1 class="page-title">{{page.title}}</h1>                        
                 {%- include Content.html -%}
             </div>

@@ -1,11 +1,4 @@
 :root {
-    --color__main: var(--color__dark);
-    --color__bg: var(--color__light);
-
-    --color__accent: var(--color__now);
-    --color__dark: #000;
-    --color__light: #fff;
-
     /* Changing colors */
     
     --color__now: #0318d010; /* <-- is changed by script */
