@@ -82,7 +82,6 @@
                 {%- include Feed.html -%}
             </div>
             {%- endif -%}
-            </div>
             {%- endif -%}
 
     
@@ -110,6 +109,8 @@
                 <div class="page-header">
                     <h1 class="page-title"> {{page.title}}</h1>
                 </div>
+                {{ content }}
+                <hr>
                 {%- include Content.html -%}
                 {%- include Backlinks.html -%}
             </div>
@@ -123,7 +124,7 @@
                 <ul class="feed__list"> 
                     {% for post in site.posts %}
                     <li class="feed__item">
-                        <article class="note">
+                        <article class="flex">
                             <span class="muted tab-nums">{{ post.date | date: "%Y-%m-%d" }}</span>
                             <a href="{{ site.baseurl }}{{post.url}}" class="note__title">{{post.title }}</a>
                         </article>
@@ -165,4 +166,16 @@
     </main>
 </body>
 <script src="{{ site.baseurl }}/assets/js/clock.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("article").forEach(article => {
+        article.innerHTML = article.innerHTML.replace(/\[\[([^\|\]]+)\|([^\]]+)\]\]/g, function(match, target, label) {
+          return `<a href="/notes/${target.trim().replace(/ /g, '-').toLowerCase()}/">${label.trim()}</a>`;
+        }).replace(/\[\[([^\]]+)\]\]/g, function(match, target) {
+          return `<a href="/notes/${target.trim().replace(/ /g, '-').toLowerCase()}/">${target.trim()}</a>`;
+        });
+      });
+    });
+    </script>
+    
 </html>

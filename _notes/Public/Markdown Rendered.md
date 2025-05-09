@@ -1,6 +1,6 @@
 ---
 title : Markdown Rendered
-feed: hide
+feed: false
 date : 01-02-2021
 ---
  

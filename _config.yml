@@ -62,13 +62,19 @@ plugins:
   - jekyll-feed 
   - jekyll-sitemap 
   - jekyll-tidy
-    
+  - jekyll-wikilinks-plus
+
+plugins_dir: _plugins
+
+wikilinks:
+  use_git_branch: false
+  strip_extension: true
 ## Enable Collections
 ## Suggested collects are "notes" "lists" and "blog"
 collections:
     notes:
       output: true
-      permalink: /:title
+      permalink: /on/:title
 
 markdown: kramdown
 
@@ -88,7 +94,7 @@ defaults:
       type: posts
     values:
       layout: Post
-      permalink: /log/:year-:month-:day
+      permalink: /on/:year-:month-:day
       content-type: post
   - scope:
       path: ""

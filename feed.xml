@@ -1,0 +1,22 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }}</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    {% assign notes = site.notes | sort: 'date' | reverse %}
+    {% for note in notes %}
+    {% if note.feed != false %}
+      <item>
+        <title>{{ note.title }}</title>
+        <link>{{ site.url }}{{ note.url }}</link>
+        <pubDate>{{ note.date | date_to_rfc822 }}</pubDate>
+        <description><![CDATA[{{ note.content | markdownify }}]]></description>
+      </item>
+    {% endif %}
+    {% endfor %}
+  </channel>
+</rss>
