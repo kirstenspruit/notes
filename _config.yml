@@ -74,7 +74,7 @@ wikilinks:
 collections:
     notes:
       output: true
-      permalink: /on/:title
+      permalink: /:title
 
 markdown: kramdown
 
