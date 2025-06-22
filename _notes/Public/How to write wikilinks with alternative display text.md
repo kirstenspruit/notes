@@ -1,8 +1,8 @@
 ---
 title: How to write wikilinks with alternative display text
-feed: false
+feed: true
 date: 2025-05-09
-updated: 
+updated:
 permalink: wikilinks
 format: list
 ---

@@ -1,9 +1,9 @@
 ---
 title: Test
-feed: show
+feed: true
 date: 21-04-2025
 updated: 05-05-2025
-permalink: 
+permalink:
 format: list
 ---
 This is a test. Updated on [[2025-05-05]] or.
